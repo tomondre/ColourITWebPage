@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"    ?>
+<projects>
+    <project>
+        <number>1</number>
+        <projectName>Lost equipment</projectName>
+        <description>System for finding lost equipment in the sea</description>
+        <requirements>Connect with danish government</requirements>
+        <status>Done</status>
+    </project>
+    <project>
+        <number>2</number>
+        <projectName>Dsdsd</projectName>
+        <description>Systedsds for finding lost equipment in the sea</description>
+        <requirements>Connect dsdsdswith danish government</requirements>
+        <status>In proccess</status>
+    </project>
+</projects>
