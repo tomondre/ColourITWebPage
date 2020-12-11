@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0f4ab7c-7699-46ce-a6b6-4cb90fe72a62" name="Default Changelist" comment="Change  of carousel and pictures">
+    <list default="true" id="a0f4ab7c-7699-46ce-a6b6-4cb90fe72a62" name="Default Changelist" comment="Have to debug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
     </list>
@@ -67,7 +67,7 @@
       <workItem from="1607424351606" duration="20720000" />
       <workItem from="1607520388270" duration="8789000" />
       <workItem from="1607617719881" duration="21289000" />
-      <workItem from="1607686480934" duration="1313000" />
+      <workItem from="1607686480934" duration="4682000" />
     </task>
     <task id="LOCAL-00001" summary="30.11.2020 - Updating from xml.">
       <created>1606742177708</created>
@@ -111,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607644421527</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Have to debug">
+      <created>1607688045084</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607688045084</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,7 +141,8 @@
     <MESSAGE value="Potatoes on small col are aligning to center, rounding the pictures in about us with bootstrap.&#10;Pictures are 1:1 now" />
     <MESSAGE value="Wrapper with slides and also changing pictures" />
     <MESSAGE value="Change  of carousel and pictures" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change  of carousel and pictures" />
+    <MESSAGE value="Have to debug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Have to debug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="159" key="FileChooserDialogImpl" timestamp="1607424085197">
@@ -157,10 +165,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="490" y="121" width="751" height="720" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1606595063058" />
-    <state x="425" y="189" key="run.anything.popup" timestamp="1607626803791">
+    <state x="425" y="189" key="run.anything.popup" timestamp="1607689777830">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1607626803791" />
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1607689777830" />
     <state x="46" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607640897174">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

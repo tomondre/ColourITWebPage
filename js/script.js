@@ -1,6 +1,6 @@
 /*globals DOMParser: false, XMLHttpRequest: false*/
 var XMLText = "<?xml version=\"1.0\" encoding=\"UTF-8\"    ?>\n" +
-    "<ongoingProjects><projects><projectName>Akaskd</projectName><projectTeam><employees><firstName>Peter</firstName><lastName>PETERSN</lastName><role>Developer</role><employeeID>25</employeeID><tasks></tasks></employees><employees><firstName>35</firstName><lastName>oodoksd</lastName><role>Productowner</role><employeeID>21</employeeID><tasks></tasks></employees></projectTeam><requirementList><requirements><estimateTime>20.0</estimateTime><priorityNumber>2</priorityNumber><description>LMM</description><taskList></taskList><requirementTablePath>23</requirementTablePath><deadline><month>11</month><year>2020</year><day>20</day></deadline><requirementType>Functional</requirementType><status>Started</status><responsibleEmployee><firstName>Peter</firstName><lastName>PETERSN</lastName><role>Developer</role><employeeID>25</employeeID><tasks></tasks></responsibleEmployee></requirements><requirements><estimateTime>50.0</estimateTime><priorityNumber>4</priorityNumber><description>dsdsds</description><taskList></taskList><requirementTablePath>21</requirementTablePath><deadline><month>0</month><year>8555</year><day>11</day></deadline><requirementType>Functional</requirementType><status>Started</status><responsibleEmployee><firstName>Peter</firstName><lastName>PETERSN</lastName><role>Developer</role><employeeID>25</employeeID><tasks></tasks></responsibleEmployee></requirements></requirementList><status>Inprocess</status></projects><projects><projectName>asdadasdfdfd</projectName><projectTeam></projectTeam><requirementList></requirementList><status>Inprocess</status></projects><projects><projectName>sdsdsds</projectName><projectTeam></projectTeam><requirementList></requirementList><status>Inprocess</status></projects></ongoingProjects>"
+    "<ongoingProjects><projects><projectName>Akaskd</projectName><projectTeam><employees><firstName>Peter</firstName><lastName>PETERSN</lastName><role>Developer</role><employeeID>25</employeeID><tasks></tasks></employees><employees><firstName>35</firstName><lastName>oodoksd</lastName><role>Productowner</role><employeeID>21</employeeID><tasks></tasks></employees></projectTeam><requirementList><requirements><estimateTime>20.0</estimateTime><priorityNumber>2</priorityNumber><description>LMM</description><taskList></taskList><requirementId>23</requirementId><deadline><month>11</month><year>2020</year><day>20</day></deadline><requirementType>Functional</requirementType><status>Started</status><responsibleEmployee><firstName>Peter</firstName><lastName>PETERSN</lastName><role>Developer</role><employeeID>25</employeeID><tasks></tasks></responsibleEmployee></requirements><requirements><estimateTime>50.0</estimateTime><priorityNumber>4</priorityNumber><description>dsdsds</description><taskList></taskList><requirementId>21</requirementId><deadline><month>0</month><year>8555</year><day>11</day></deadline><requirementType>Functional</requirementType><status>Started</status><responsibleEmployee><firstName>Peter</firstName><lastName>PETERSN</lastName><role>Developer</role><employeeID>25</employeeID><tasks></tasks></responsibleEmployee></requirements></requirementList><status>Inprocess</status></projects><projects><projectName>asdadasdfdfd</projectName><projectTeam></projectTeam><requirementList></requirementList><status>Inprocess</status></projects><projects><projectName>sdsdsds</projectName><projectTeam></projectTeam><requirementList></requirementList><status>Inprocess</status></projects></ongoingProjects>"
 
 
 var selectedProjectIndex = -1;
@@ -33,8 +33,8 @@ function displayRequirementTable(projectIndex, requirementTablePath) {
     xmlDoc = parser.parseFromString(XMLText, "text/xml");
     var x = xmlDoc.getElementsByTagName("projects")[projectIndex].getElementsByTagName("requirements");
     var listLength = x.length;
-    console.log(projectIndex)
     var table = "<tr><th>requirementTablePath</th><th>PriorityNumber</th><th>Status</th><th>Description</th><th>EstimateTime</th><th>Type</th></tr>";
+
     for (var i = 0; i < listLength; i++) {
         table +=
             "</tr><td>" + x[i].getElementsByTagName("requirementId")[0].childNodes[0].nodeValue +
@@ -45,37 +45,29 @@ function displayRequirementTable(projectIndex, requirementTablePath) {
             "</td><td>" + x[i].getElementsByTagName("requirementType")[0].childNodes[0].nodeValue +
             "</td></tr>";
     }
-    console.log(table)
     document.getElementById(requirementTablePath).innerHTML = table;
     //addIndexesToTableRow(requirementTablePath);
     //addRowHandlers(requirementTablePath);
 }
 
 
+
 //TODO
 function addRowHandlers(ID) {
     var table = document.getElementById(ID);
     var rows = table.getElementsByTagName("tr");
-    for (i = 1; i < rows.length; i++) {
+    for (i = 0; i < rows.length; i++) {
         var currentRow = table.rows[i];
         var createClickHandler =
             function (row) {
                 return function () {
-                    console.log(row.id)
-                        // selectedProjectIndex = row.id;
-                        // selectedRequirementIndex = -1;
-                        displayRequirementTable(row.id, requirementTablePath)
-                    // if (ID == requirementTablePath) {
-                    //     selectedRequirementIndex = row.id;
-                    //     displayTaskTable(selectedProjectIndex, row.id ,taskTablePath)
-                        // if (selectedRequirementIndex > -1) {
-                        //     displayTaskTable(selectedProjectIndex, selectedRequirementIndex,taskTablePath)
-                        // }
-                    }
-                };
-            }
+                    displayRequirementTable(row.id, requirementTablePath)
+                }
+            };
+
         currentRow.onclick = createClickHandler(currentRow);
     }
+}
 
 
 function addIndexesToTableRow(tableID) {
