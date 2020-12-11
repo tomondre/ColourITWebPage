@@ -23,7 +23,6 @@ function displayMainTable(projectTablePath) {
             "</td><td>" + x[i].getElementsByTagName("status")[0].childNodes[0].nodeValue +
             "</td></tr>";
     }
-
     document.getElementById(projectTablePath).innerHTML = table;
     addIndexesToTableRow(projectTablePath);
     addRowHandlers(projectTablePath);
@@ -34,7 +33,8 @@ function displayRequirementTable(projectIndex, requirementTablePath) {
     xmlDoc = parser.parseFromString(XMLText, "text/xml");
     var x = xmlDoc.getElementsByTagName("projects")[projectIndex].getElementsByTagName("requirements");
     var listLength = x.length;
-    table = "<tr><th>requirementTablePath</th><th>PriorityNumber</th><th>Status</th><th>Description</th><th>EstimateTime</th><th>Type</th></tr>"
+    console.log(projectIndex)
+    var table = "<tr><th>requirementTablePath</th><th>PriorityNumber</th><th>Status</th><th>Description</th><th>EstimateTime</th><th>Type</th></tr>";
     for (var i = 0; i < listLength; i++) {
         table +=
             "</tr><td>" + x[i].getElementsByTagName("requirementId")[0].childNodes[0].nodeValue +
@@ -45,11 +45,46 @@ function displayRequirementTable(projectIndex, requirementTablePath) {
             "</td><td>" + x[i].getElementsByTagName("requirementType")[0].childNodes[0].nodeValue +
             "</td></tr>";
     }
-    document.getElementById(requirementTablePath).appendHTML = "<h2> Requirements </h2>";
+    console.log(table)
     document.getElementById(requirementTablePath).innerHTML = table;
-    addIndexesToTableRow(requirementTablePath);
-    addRowHandlers(requirementTablePath);
+    //addIndexesToTableRow(requirementTablePath);
+    //addRowHandlers(requirementTablePath);
 }
+
+
+//TODO
+function addRowHandlers(ID) {
+    var table = document.getElementById(ID);
+    var rows = table.getElementsByTagName("tr");
+    for (i = 1; i < rows.length; i++) {
+        var currentRow = table.rows[i];
+        var createClickHandler =
+            function (row) {
+                return function () {
+                    console.log(row.id)
+                        // selectedProjectIndex = row.id;
+                        // selectedRequirementIndex = -1;
+                        displayRequirementTable(row.id, requirementTablePath)
+                    // if (ID == requirementTablePath) {
+                    //     selectedRequirementIndex = row.id;
+                    //     displayTaskTable(selectedProjectIndex, row.id ,taskTablePath)
+                        // if (selectedRequirementIndex > -1) {
+                        //     displayTaskTable(selectedProjectIndex, selectedRequirementIndex,taskTablePath)
+                        // }
+                    }
+                };
+            }
+        currentRow.onclick = createClickHandler(currentRow);
+    }
+
+
+function addIndexesToTableRow(tableID) {
+    var li = document.getElementById(tableID).getElementsByTagName("tr");
+    for (i = 1; i < li.length; i++) {
+        li[i].id = i - 1;
+    }
+}
+
 ////TODO edit when task exported
 // function displayTaskTable(projectIndex, requirementIndex, requirementTablePath) {
 //     parser = new DOMParser();
@@ -72,40 +107,6 @@ function displayRequirementTable(projectIndex, requirementTablePath) {
 //     addIndexesToTableRow(taskTablePath);
 //     addRowHandlers(taskTablePath);
 // }
-
-//TODO
-function addRowHandlers(ID) {
-    var table = document.getElementById(ID);
-    var rows = table.getElementsByTagName("tr");
-    for (i = 1; i < rows.length; i++) {
-        var currentRow = table.rows[i];
-        var createClickHandler =
-            function (row) {
-                return function () {
-                    if (ID == projectTablePath) {
-                        selectedProjectIndex = row.id;
-                        selectedRequirementIndex = -1;
-                        displayRequirementTable(row.id, requirementTablePath)
-                    }
-                    if (ID == requirementTablePath) {
-                        selectedRequirementIndex = row.id;
-                        displayTaskTable(selectedProjectIndex, row.id ,taskTablePath)
-                        // if (selectedRequirementIndex > -1) {
-                        //     displayTaskTable(selectedProjectIndex, selectedRequirementIndex,taskTablePath)
-                        // }
-                    }
-                };
-            };
-        currentRow.onclick = createClickHandler(currentRow);
-    }
-}
-
-function addIndexesToTableRow(tableID) {
-    var li = document.getElementById(tableID).getElementsByTagName("tr");
-    for (i = 1; i < li.length; i++) {
-        li[i].id = i - 1;
-    }
-}
 
 
 //var JsonText = [{"projects":[{"projectName":"Akaskd","projectTeam":{"employees":[{"employeeID":25,"firstName":"Peter","lastName":"PETERSN","role":"Developer","tasks":{"tasks":[]}},{"employeeID":21,"firstName":"35","lastName":"oodoksd","role":"Product owner","tasks":{"tasks":[]}}]},"requirementList":{"requirements":[{"requirementTablePath":"23","description":"LMM","status":"Started","estimateTime":20.0,"priorityNumber":2,"deadline":{"day":20,"month":11,"year":2020},"taskList":{"tasks":[]},"responsibleEmployee":{"employeeID":25,"firstName":"Peter","lastName":"PETERSN","role":"Developer","tasks":{"tasks":[]}},"requirementType":"Functional"},{"requirementTablePath":"21","description":"dsdsds","status":"Started","estimateTime":50.0,"priorityNumber":4,"deadline":{"day":11,"month":0,"year":8555},"taskList":{"tasks":[]},"responsibleEmployee":{"employeeID":25,"firstName":"Peter","lastName":"PETERSN","role":"Developer","tasks":{"tasks":[]}},"requirementType":"Functional"}]},"status":"In process"},{"projectName":"asdadasd","projectTeam":{"employees":[]},"requirementList":{"requirements":[]},"status":"In process"},{"projectName":"sdsdsds","projectTeam":{"employees":[]},"requirementList":{"requirements":[]},"status":"In process"}]}];
