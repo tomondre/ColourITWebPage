@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0f4ab7c-7699-46ce-a6b6-4cb90fe72a62" name="Default Changelist" comment="Tables now display informations about project, requirement, task from XML String. Now I have to make it read external file instead of String">
+    <list default="true" id="a0f4ab7c-7699-46ce-a6b6-4cb90fe72a62" name="Default Changelist" comment="Backup before I will screw up something xd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XML/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XML/project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects.html" afterDir="false" />
     </list>
@@ -72,7 +71,7 @@
       <workItem from="1607617719881" duration="21289000" />
       <workItem from="1607686480934" duration="8439000" />
       <workItem from="1607769319901" duration="18658000" />
-      <workItem from="1607852943189" duration="5946000" />
+      <workItem from="1607852943189" duration="7955000" />
     </task>
     <task id="LOCAL-00001" summary="30.11.2020 - Updating from xml.">
       <created>1606742177708</created>
@@ -130,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607691493846</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Backup before I will screw up something xd">
+      <created>1607860435337</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607860435337</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +162,8 @@
     <MESSAGE value="Have to debug" />
     <MESSAGE value="Project Table and Requirement table now read XML String and fill informations from it. Requirement table now show requirements of project after clicking on it in project table. Have to add table with tasks and also  use external .xml file instead of just xml String" />
     <MESSAGE value="Tables now display informations about project, requirement, task from XML String. Now I have to make it read external file instead of String" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tables now display informations about project, requirement, task from XML String. Now I have to make it read external file instead of String" />
+    <MESSAGE value="Backup before I will screw up something xd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Backup before I will screw up something xd" />
   </component>
   <component name="WindowStateProjectService">
     <state x="93" y="93" width="1350" height="648" key="DiffContextDialog" timestamp="1607793657983">
@@ -179,10 +186,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="93" y="93" width="1350" height="648" key="ShowDiffWithBranchDialog/0.0.1536.834@0.0.1536.834" timestamp="1607793657983" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1607691543352">
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1607860437824">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1607691543352" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1607860437824" />
     <state x="586" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607854596105">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
