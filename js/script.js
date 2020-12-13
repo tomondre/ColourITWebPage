@@ -1,43 +1,44 @@
 /*globals DOMParser: false, XMLHttpRequest: false*/
 var XMLText = "<?xml version=\"1.0\" encoding=\"UTF-8\"    ?>\n" +
-    "<ongoingProjects><projects><projectName>Akaskd</projectName><projectTeam><employees><firstName>Peter</firstName><lastName>PETERSN</lastName><role>Developer</role><employeeID>25</employeeID><tasks></tasks></employees><employees><firstName>35</firstName><lastName>oodoksd</lastName><role>Productowner</role><employeeID>21</employeeID><tasks></tasks></employees></projectTeam><requirementList><requirements><estimateTime>20.0</estimateTime><priorityNumber>2</priorityNumber><description>LMM</description><taskList></taskList><requirementId>23</requirementId><deadline><month>11</month><year>2020</year><day>20</day></deadline><requirementType>Functional</requirementType><status>Started</status><responsibleEmployee><firstName>Peter</firstName><lastName>PETERSN</lastName><role>Developer</role><employeeID>25</employeeID><tasks></tasks></responsibleEmployee></requirements><requirements><estimateTime>50.0</estimateTime><priorityNumber>4</priorityNumber><description>dsdsds</description><taskList></taskList><requirementId>21</requirementId><deadline><month>0</month><year>8555</year><day>11</day></deadline><requirementType>Functional</requirementType><status>Started</status><responsibleEmployee><firstName>Peter</firstName><lastName>PETERSN</lastName><role>Developer</role><employeeID>25</employeeID><tasks></tasks></responsibleEmployee></requirements></requirementList><status>Inprocess</status></projects><projects><projectName>asdadasdfdfd</projectName><projectTeam></projectTeam><requirementList></requirementList><status>Inprocess</status></projects><projects><projectName>sdsdsds</projectName><projectTeam></projectTeam><requirementList></requirementList><status>Inprocess</status></projects></ongoingProjects>"
-
-
+"<ongoingProjects><projects><projectName>First project</projectName><projectTeam><employees><firstName>Eliza</firstName><lastName>Manciu</lastName><role/><employeeID>400</employeeID><tasks></tasks></employees><employees><firstName>Khaled</firstName><lastName>Hammoun</lastName><role/><employeeID>3007</employeeID><tasks></tasks></employees></projectTeam><requirementList><requirements><estimateTime>1.0</estimateTime><priorityNumber>1</priorityNumber><description>adf af</description><taskList><tasks><estimatedTime>1.0</estimatedTime><timeUsed>1.0</timeUsed><description>wfj neæwq</description><assignedToTask><employees><firstName>Khaled</firstName><lastName>Hammoun</lastName><role>Project creator</role><employeeID>3007</employeeID><tasks></tasks></employees></assignedToTask><deadline><month>1</month><year>1</year><day>1</day></deadline><isDone>false</isDone><taskID>1</taskID><responsibleEmployee><firstName>Khaled</firstName><lastName>Hammoun</lastName><role>Project creator</role><employeeID>3007</employeeID><tasks></tasks></responsibleEmployee></tasks></taskList><requirementId>First requirement</requirementId><deadline><month>1</month><year>1</year><day>1</day></deadline><requirementType>Functional</requirementType><status>Started</status><responsibleEmployee><firstName>Khaled</firstName><lastName>Hammoun</lastName><role>Project creator</role><employeeID>3007</employeeID><tasks></tasks></responsibleEmployee></requirements></requirementList><status>In process</status></projects><projects><projectName>Second project</projectName><projectTeam><employees><firstName>234213</firstName><lastName>43124</lastName><role/><employeeID>3213</employeeID><tasks></tasks></employees></projectTeam><requirementList><requirements><estimateTime>1.0</estimateTime><priorityNumber>2</priorityNumber><description>32re13r</description><taskList><tasks><estimatedTime>1.0</estimatedTime><timeUsed>1.0</timeUsed><description>fadw feq</description><assignedToTask><employees><firstName>234213</firstName><lastName>43124</lastName><role>Product owner</role><employeeID>3213</employeeID><tasks></tasks></employees></assignedToTask><deadline><month>1</month><year>1</year><day>1</day></deadline><isDone>true</isDone><taskID>12</taskID><responsibleEmployee><firstName>234213</firstName><lastName>43124</lastName><role>Product owner</role><employeeID>3213</employeeID><tasks></tasks></responsibleEmployee></tasks></taskList><requirementId>aygfkyu</requirementId><deadline><month>2</month><year>2</year><day>2</day></deadline><requirementType>Non functional</requirementType><status>Started</status><responsibleEmployee><firstName>234213</firstName><lastName>43124</lastName><role>Product owner</role><employeeID>3213</employeeID><tasks></tasks></responsibleEmployee></requirements></requirementList><status>In process</status></projects></ongoingProjects>";
 var selectedProjectIndex = -1;
-var selectedRequirementIndex = -1;
-var requirementTablePath = "reqTab";           //ID of requirementTable element
-var projectTablePath = "projectTab"              //ID of projectTable element
+var requirementTablePath = "reqTab";
+var projectTablePath = "projectTab"
 var taskTablePath = "taskTab"
 
-displayMainTable(projectTablePath);
+var parser, xmlDoc, document;
+parser = new DOMParser();
+xmlDoc = parser.parseFromString(XMLText, "text/xml")
+var y = xmlDoc.getElementsByTagName("projects");
 
-function displayMainTable(projectTablePath) {
-    parser = new DOMParser();
-    xmlDoc = parser.parseFromString(XMLText, "text/xml");
-    var x = xmlDoc.getElementsByTagName("projects");
-    var listLength = x.length;
-    var table = "<tr><th>Project Name</th><th>Status</th></tr>"
+
+
+
+displayMainTable();
+function displayMainTable() {
+    var listLength = y.length;
+    var table = "<table><tr><th>Project Name</th><th>Status</th></tr>"
     for (var i = 0; i < listLength; i++) {
         table +=
-            "</tr id=i><td>" + x[i].getElementsByTagName("projectName")[0].childNodes[0].nodeValue +
-            "</td><td>" + x[i].getElementsByTagName("status")[0].childNodes[0].nodeValue +
+            "</tr><td class='name'>" + y[i].getElementsByTagName("projectName")[0].childNodes[0].nodeValue +
+            "</td><td>" + y[i].getElementsByTagName("status")[y[i].getElementsByTagName("status").length-1].childNodes[0].nodeValue +
             "</td></tr>";
     }
+    table += "</table>"
     document.getElementById(projectTablePath).innerHTML = table;
     addIndexesToTableRow(projectTablePath);
     addRowHandlers(projectTablePath);
+    underLineTR()
 }
 
-function displayRequirementTable(projectIndex, requirementTablePath) {
-    parser = new DOMParser();
-    xmlDoc = parser.parseFromString(XMLText, "text/xml");
-    var x = xmlDoc.getElementsByTagName("projects")[projectIndex].getElementsByTagName("requirements");
+function displayRequirementTable(projectIndex) {
+    var x = y[projectIndex].getElementsByTagName("requirements");
     var listLength = x.length;
-    var table = "<tr><th>requirementTablePath</th><th>PriorityNumber</th><th>Status</th><th>Description</th><th>EstimateTime</th><th>Type</th></tr>";
+    var table = "<table><tr><th>Requirement Name</th><th>Priority Number</th><th>Status</th><th>Description</th><th>Estimate Time</th><th>Type</th></tr>";
 
     for (var i = 0; i < listLength; i++) {
         table +=
-            "</tr><td>" + x[i].getElementsByTagName("requirementId")[0].childNodes[0].nodeValue +
+            "</tr><td class='name'>" + x[i].getElementsByTagName("requirementId")[0].childNodes[0].nodeValue +
             "</td><td>" + x[i].getElementsByTagName("priorityNumber")[0].childNodes[0].nodeValue +
             "</td><td>" + x[i].getElementsByTagName("status")[0].childNodes[0].nodeValue +
             "</td><td>" + x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue +
@@ -45,14 +46,32 @@ function displayRequirementTable(projectIndex, requirementTablePath) {
             "</td><td>" + x[i].getElementsByTagName("requirementType")[0].childNodes[0].nodeValue +
             "</td></tr>";
     }
+    table += "</table>"
     document.getElementById(requirementTablePath).innerHTML = table;
-    //addIndexesToTableRow(requirementTablePath);
-    //addRowHandlers(requirementTablePath);
+    addIndexesToTableRow(requirementTablePath);
+    addRowHandlers(requirementTablePath);
+    underLineTR();
 }
 
+function displayTaskTable(projectIndex, requirementIndex) {
+    var x = y[projectIndex].getElementsByTagName("requirements")[requirementIndex].getElementsByTagName("taskList")[0].getElementsByTagName("tasks");
+    var listLength = x.length;
+    var table = "<tr><th>TaskID</th><th>Description</th><th>EstimateTime</th><th>TimeUsed</th><th>IsDone</th></tr>"
+    for (var i = 0; i < listLength; i++) {
+        if (x[i].childNodes[0] != null) {
+            table +=
+                "</tr><td>" + x[i].getElementsByTagName("taskID")[0].childNodes[0].nodeValue +
+                "</td><td>" + x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue +
+                "</td><td>" + x[i].getElementsByTagName("estimatedTime")[0].childNodes[0].nodeValue +
+                "</td><td>" + x[i].getElementsByTagName("timeUsed")[0].childNodes[0].nodeValue +
+                "</td><td>" + x[i].getElementsByTagName("isDone")[0].childNodes[0].nodeValue +
+                "</td></tr>";
+        }
+    }
+    document.getElementById(taskTablePath).innerHTML = table;
+    underLineTR();
+}
 
-
-//TODO
 function addRowHandlers(ID) {
     var table = document.getElementById(ID);
     var rows = table.getElementsByTagName("tr");
@@ -61,14 +80,22 @@ function addRowHandlers(ID) {
         var createClickHandler =
             function (row) {
                 return function () {
-                    displayRequirementTable(row.id, requirementTablePath)
+                    if (ID == projectTablePath) {
+                        selectedProjectIndex = row.id;
+                        resetTaskTable();
+                        displayReqHeader();
+                        displayRequirementTable(selectedProjectIndex, requirementTablePath)
+                    }
+                    if (ID == requirementTablePath)
+                    {
+                        displayTaskHeader();
+                        displayTaskTable(selectedProjectIndex,row.id, taskTablePath)
+                    }
                 }
             };
-
         currentRow.onclick = createClickHandler(currentRow);
     }
 }
-
 
 function addIndexesToTableRow(tableID) {
     var li = document.getElementById(tableID).getElementsByTagName("tr");
@@ -77,49 +104,38 @@ function addIndexesToTableRow(tableID) {
     }
 }
 
-////TODO edit when task exported
-// function displayTaskTable(projectIndex, requirementIndex, requirementTablePath) {
-//     parser = new DOMParser();
-//     xmlDoc = parser.parseFromString(XMLText, "text/xml");
-//     var x = xmlDoc.getElementsByTagName("projects")[projectIndex].getElementsByTagName("requirements")[requirementIndex].getElementsByTagName("taskList");
-//     var listLength = x.length;
-//     table = "<tr><th>requirementTablePath</th><th>PriorityNumber</th><th>Status</th><th>Description</th><th>EstimateTime</th><th>Type</th></tr>"
-//     for (var i = 0; i < listLength; i++) {
-//         table +=
-//             "</tr><td>" + x[i].getElementsByTagName("requirementId")[0].childNodes[0].nodeValue +
-//             "</td><td>" + x[i].getElementsByTagName("priorityNumber")[0].childNodes[0].nodeValue +
-//             "</td><td>" + x[i].getElementsByTagName("status")[0].childNodes[0].nodeValue +
-//             "</td><td>" + x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue +
-//             "</td><td>" + x[i].getElementsByTagName("estimateTime")[0].childNodes[0].nodeValue +
-//             "</td><td>" + x[i].getElementsByTagName("requirementType")[0].childNodes[0].nodeValue +
-//             "</td></tr>";
-//     }
-//     document.getElementById(taskTablePath).appendHTML = "<h2> Requirements </h2>";
-//     document.getElementById(taskTablePath).innerHTML = table;
-//     addIndexesToTableRow(taskTablePath);
-//     addRowHandlers(taskTablePath);
+function resetTaskTable()
+{
+    document.getElementById(taskTablePath).innerHTML ="";
+    document.getElementById("taskHeader").innerHTML ="";
+}
+
+function displayReqHeader(){
+    document.getElementById("reqHeader").innerHTML = "<h2>Requirements</h2>"
+}
+
+function displayTaskHeader(){
+    document.getElementById("taskHeader").innerHTML = "<h2>Tasks</h2>"
+}
+
+function underLineTR(){
+    var temp = document.getElementsByClassName("name");
+    for (i = 0; i<temp.length; i++){
+    temp[i].style.textDecoration = "underline";
+    }
+}
+
+// function readXML() {
+//     var xhttp = new XMLHttpRequest();
+//     xhttp.onreadystatechange = function () {
+//         if (this.readyState == 4 && this.status == 200) {
+//             XMLText = this;
+//         }
+//     };
+//     xhttp.open("GET", "XML/project.xml", true);
+//     xhttp.send();
 // }
 
-
-//var JsonText = [{"projects":[{"projectName":"Akaskd","projectTeam":{"employees":[{"employeeID":25,"firstName":"Peter","lastName":"PETERSN","role":"Developer","tasks":{"tasks":[]}},{"employeeID":21,"firstName":"35","lastName":"oodoksd","role":"Product owner","tasks":{"tasks":[]}}]},"requirementList":{"requirements":[{"requirementTablePath":"23","description":"LMM","status":"Started","estimateTime":20.0,"priorityNumber":2,"deadline":{"day":20,"month":11,"year":2020},"taskList":{"tasks":[]},"responsibleEmployee":{"employeeID":25,"firstName":"Peter","lastName":"PETERSN","role":"Developer","tasks":{"tasks":[]}},"requirementType":"Functional"},{"requirementTablePath":"21","description":"dsdsds","status":"Started","estimateTime":50.0,"priorityNumber":4,"deadline":{"day":11,"month":0,"year":8555},"taskList":{"tasks":[]},"responsibleEmployee":{"employeeID":25,"firstName":"Peter","lastName":"PETERSN","role":"Developer","tasks":{"tasks":[]}},"requirementType":"Functional"}]},"status":"In process"},{"projectName":"asdadasd","projectTeam":{"employees":[]},"requirementList":{"requirements":[]},"status":"In process"},{"projectName":"sdsdsds","projectTeam":{"employees":[]},"requirementList":{"requirements":[]},"status":"In process"}]}];
-// buildTable(JsonText)
-//
-// function buildTable(data) {
-//     var table = "<table><tr><th>Project Name</th><th>Status</th></tr>"
-//     for (var i = 0; i < data.length; i++) {
-//
-//         table +=
-//             "<tr><td>" + data[i].projectName +
-//             "</td><td>" + data[i].status +
-//             "</td></tr>";
-//     }
-//
-//     table += "</table>";
-//
-//     document.getElementById("25").innerHTML = table;
-//     }
-//
-// document.getElementById(h2).innerHTML =" XmlText";
 
 //var parser, xmlDoc, document;
 //
@@ -134,16 +150,7 @@ function addIndexesToTableRow(tableID) {
 // divs[0].innerHTML = displayContent(0, "projectName");
 
 
-// function readXML() {
-//     var xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function () {
-//         if (this.readyState == 4 && this.status == 200) {
-//             showData(this);
-//         }
-//     };
-//     xhttp.open("GET", "XML/project.xml", true);
-//     xhttp.send();
-// }
+
 //
 // function showData(xml) {
 //
