@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0f4ab7c-7699-46ce-a6b6-4cb90fe72a62" name="Default Changelist" comment="Backup before I will screw up something xd">
+    <list default="true" id="a0f4ab7c-7699-46ce-a6b6-4cb90fe72a62" name="Default Changelist" comment="Wea reading the file now pro external XML in tables">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/XML/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/XML/project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +70,7 @@
       <workItem from="1607617719881" duration="21289000" />
       <workItem from="1607686480934" duration="8439000" />
       <workItem from="1607769319901" duration="18658000" />
-      <workItem from="1607852943189" duration="7955000" />
+      <workItem from="1607852943189" duration="8650000" />
     </task>
     <task id="LOCAL-00001" summary="30.11.2020 - Updating from xml.">
       <created>1606742177708</created>
@@ -136,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607860435337</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Wea reading the file now pro external XML in tables">
+      <created>1607862514424</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1607862514424</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +169,8 @@
     <MESSAGE value="Project Table and Requirement table now read XML String and fill informations from it. Requirement table now show requirements of project after clicking on it in project table. Have to add table with tasks and also  use external .xml file instead of just xml String" />
     <MESSAGE value="Tables now display informations about project, requirement, task from XML String. Now I have to make it read external file instead of String" />
     <MESSAGE value="Backup before I will screw up something xd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Backup before I will screw up something xd" />
+    <MESSAGE value="Wea reading the file now pro external XML in tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wea reading the file now pro external XML in tables" />
   </component>
   <component name="WindowStateProjectService">
     <state x="93" y="93" width="1350" height="648" key="DiffContextDialog" timestamp="1607793657983">

@@ -24,6 +24,8 @@ footer {
     background-color: #242729;
     margin-top: 20px;
     color: #ffffff;
+position: absolute;
+    bottom: 0;
     
 }
 footer a{
