@@ -8,7 +8,6 @@ var taskTablePath = "taskTab"
 var parser
 var xmlDoc;
 var document;
-xmlDoc =
 fetch('XML/project.xml').then((response)=>{
     response.text().then((XMLText)=>{
         parser = new DOMParser();
@@ -74,13 +73,13 @@ fetch('XML/project.xml').then((response)=>{
 
         function addRowHandlers(ID) {
             var table = document.getElementById(ID);
-            var rows = table.getElementsByTagName("tr");
+            var rows = table.getElementsByTagName("tr") ;
             for (i = 0; i < rows.length; i++) {
                 var currentRow = table.rows[i];
                 var createClickHandler =
                     function (row) {
                         return function () {
-                            if (ID == projectTablePath) {
+                            if (ID == projectTablePath ) {
                                 selectedProjectIndex = row.id;
                                 resetTaskTable();
                                 displayReqHeader();
