@@ -19,13 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0f4ab7c-7699-46ce-a6b6-4cb90fe72a62" name="Default Changelist" comment="Back to the last footer">
+    <list default="true" id="a0f4ab7c-7699-46ce-a6b6-4cb90fe72a62" name="Default Changelist" comment="Commenting and editing the code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/about-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/about-us.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +74,8 @@
       <workItem from="1607769319901" duration="18658000" />
       <workItem from="1607852943189" duration="13979000" />
       <workItem from="1607983517592" duration="557000" />
-      <workItem from="1607984218768" duration="1840000" />
+      <workItem from="1607984218768" duration="2005000" />
+      <workItem from="1608031892652" duration="2173000" />
     </task>
     <task id="LOCAL-00001" summary="30.11.2020 - Updating from xml.">
       <created>1606742177708</created>
@@ -161,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607864396086</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Commenting and editing the code">
+      <created>1607986196110</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1607986196110</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +198,8 @@
     <MESSAGE value="Wea reading the file now pro external XML in tables" />
     <MESSAGE value="Footer edit" />
     <MESSAGE value="Back to the last footer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Back to the last footer" />
+    <MESSAGE value="Commenting and editing the code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commenting and editing the code" />
   </component>
   <component name="WindowStateProjectService">
     <state x="93" y="93" width="1350" height="648" key="DiffContextDialog" timestamp="1607793657983">
@@ -226,10 +234,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="490" y="121" width="751" height="720" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1606595063058" />
-    <state x="425" y="189" key="run.anything.popup" timestamp="1607792218350">
+    <state x="425" y="189" key="run.anything.popup" timestamp="1608039169475">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1607792218350" />
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1608039169475" />
     <state x="46" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607640897174">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
