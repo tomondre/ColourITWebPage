@@ -1,31 +1,43 @@
-html, body{
-    width: 100%;
-    height: 100%;
+body {
     background-color: #2f3443;
-    color: #f2f2f3;
+    color:  #f2f2f3;
 }
+
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: transparent;
-    padding: 0 15px;
     margin: 0;
     z-index: 100;
 }
+
 #main {
     margin-top: 120px;
 }
+
 #main p {
     text-align: center;
 }
+
 footer {
     background-color: #242729;
     margin-top: 20px;
     color: #ffffff;
 }
-footer a{
+
+#projectsFooter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 185px;
+    background-color: #242729;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+footer a {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #ffffff;
@@ -34,14 +46,17 @@ footer a{
     border: none;
     padding-bottom: 10px;
 }
-footer a:hover{
+
+footer a:hover {
     text-decoration: none;
     color: green;
 }
+
 #footer-text {
     color: white;
     background-color: white;
 }
+
 .contact-form .btnContact {
     width: 50%;
     border: none;
@@ -61,6 +76,7 @@ footer a:hover{
 .carousel {
     position: relative;
 }
+
 
 ol.carousel-indicators {
     position: absolute;
