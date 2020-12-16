@@ -2,11 +2,12 @@
 <html lang="">
 
 <!-- Making references to external files-css stylesheet, boostrap, javascript, jquery-->
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="css/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="css/styles.css" type="text/css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -18,15 +19,13 @@
 <!--Navbar with the logo and clickable links to different .html sites -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <!-- Clickable logo of the site -->
-    <a class="navbar-brand" href="index.html"><img src="./Img/Colour%20IT%20logo.png" alt="Coloured compamy logo"
-                                                   title="Colour IT"></a>
+    <a class="navbar-brand" href="index.html"><img src="./Img/Colour%20IT%20logo.png" alt="Coloured compamy logo" title="Colour IT"></a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
         <!--Unordered list of navigation items with links to .html sites-->
         <ul class="navbar-nav">
@@ -50,30 +49,27 @@
 
 </nav>
 
-<!-- Boostrap main div. Navigation bar and footer part of the site is on each site the same but this part is always different. -->
-<div class="container-fluid flex-grow-1" id="main">
+<!-- Boostrap main div -->
+<div class="container-fluid" id="main">
 
-    <div class="row ">
+    <div class="row">
 
-        <div class="col-md-12 col-lg-7  d-fle flex-column align-items-start">
+        <div class="col-md-12 col-lg-7 flex-column align-items-start">
 
 
-            <!-- Boostrap carousel part of the site -->
+            <!-- Carousel part of the site -->
             <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails p-10" data-ride="carousel">
 
                 <!-- Changing pictures inside the carousel -->
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="Img/1.jpg"
-                             alt="First slide">
+                        <img class="d-block w-100" src="Img/1.jpg" alt="First slide" title="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="Img/2.jpg"
-                             alt="Second slide">
+                        <img class="d-block w-100" src="Img/2.jpg" alt="Second slide" title="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="Img/3.jpg"
-                             alt="Third slide">
+                        <img class="d-block w-100" src="Img/3.jpg" alt="Third slide" title="Third slide">
                     </div>
                 </div>
 
@@ -100,6 +96,7 @@
                     </li>
                 </ol>
             </div>
+
 
             <!-- Boostrap row with a text field -->
             <div class="row">
@@ -135,44 +132,44 @@
             </div>
         </div>
 
-        <!-- Right boostrap part of the site with 4 pictures. After the boostrap breakpoints, the content is changed to different layouts -->
+        <!-- Right boostrap part of the site with 4 pictures -->
         <div class="col-8 offset-4 col-sm-10 col-lg-5 mx-auto p-0">
-            <div class="row">
+            <div class="row mr-1">
                 <div class="col-sm-12 col-md-6">
-                    <img class="img-fluid rounded mx-auto d-block" src="./Img/1x4.jpg"
-                         alt="Program for calculating number of beans inside a pouch.">
+                    <img class="img-fluid rounded mx-auto d-block" src="./Img/1x4.jpg" alt="Program for calculating number of beans inside a pouch." title="Program for calculating number of beans inside a pouch.">
+
                     <p>
                         Program for calculating number of beans inside a pouch.
                     </p>
                 </div>
+
                 <div class="col-sm-12 col-md-6">
-                    <img class="img-fluid rounded mx-auto d-block" src="./Img/2x4.jpg"
-                         alt="Face">
+                    <img class="img-fluid rounded mx-auto d-block" src="./Img/2x4.jpg" alt="Face" title="Face">
                     <p>
                         Face.
                     </p>
                 </div>
             </div>
 
-            <!-- Boostrap row with custom breakpoints and 2 divs with pictures -->
-            <div class="row">
+            <div class="row mr-1">
                 <div class="col-sm-12 col-md-6">
-                    <img class="img-fluid rounded mx-auto d-block" src="./Img/3x4.png"
-                         alt="Noddle soup recipe">
+                    <img class="img-fluid rounded mx-auto d-block" src="./Img/3x4.png" alt="Noddle soup recipe" title="Noddle soup recipe">
                     <p>
                         Noddle soup recipe
                     </p>
                 </div>
+
                 <div class="col-sm-12 col-md-6">
-                    <img class="img-fluid rounded mx-auto d-block" src="./Img/4x4.jpg"
-                         alt="Some random program">
+                    <img class="img-fluid rounded mx-auto d-block" src="./Img/4x4.jpg" alt="Some random program" title="Some random program">
                     <p>
                         Some random program.
                     </p>
+
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
 <!-- Footer part of the site -->
@@ -188,19 +185,23 @@
                     <!-- Boostrap div with clickable logo. After clicking the picture, site will be changed to the index one -->
                     <div class="col-sm-4">
 
-                        <a href="index.html"><img src="./Img/Colour%20IT%20logo.png" alt="Coloured company logo"
-                                                  title="Colour I"></a>
+                        <a href="index.html"><img src="./Img/Colour%20IT%20logo.png" alt="Coloured company logo" title="Colour I"></a>
+
                     </div>
 
                     <!-- Bootstrap unordered list of different elements with hyperlink to other sites/platforms  -->
                     <div class="col-sm-3 col-md-3">
+
                         <ul class="nav d-flex flex-column">
+
                             <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
                             <li><a href="https://www.linkedin.com" target="_blank">Linkedin</a></li>
                             <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
                             <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
                             <li><a href="https://medium.com" target="_blank">Medium</a></li>
+
                         </ul>
+
                     </div>
 
                     <!-- Boostrap unordered list of different elements with hyperlink to the .html sites-->
@@ -220,7 +221,6 @@
 
             </div>
 
-            <!-- Div with custom boostrap breakpoints -->
             <div class="col-md-12 col-lg-6">
 
                 <h3>More than a tech company</h3>
@@ -241,7 +241,6 @@
 
                         <p class="t-secondary">Our mission is to advance the positive social impact of developers, one
                             project at a time.</p>
-
                     </div>
 
                 </div>
@@ -250,7 +249,6 @@
 
         </div>
 
-        <!-- Div on the bottom of a footer -->
         <div class="row d-flex justify-content-center">
 
             <div class="col-md-12">
